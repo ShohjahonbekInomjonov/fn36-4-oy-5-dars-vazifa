@@ -1,4 +1,10 @@
-print("hello world")
+from flask import Flask
 
-for i in range(10):
-    print(i)
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "hello world"
+
+if __name__ == "__main__":
+    app.run(debug=True)
